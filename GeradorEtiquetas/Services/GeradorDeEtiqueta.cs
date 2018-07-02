@@ -27,7 +27,7 @@ namespace GeradorEtiquetas.Services
                 sb.AppendLine($"A387,20,0,5,1,1,N,\"{numeracao.Numero}\"");
                 sb.AppendLine($"A25,76,0,4,1,1,N,\"{etiqueta.MaterialCor.Nome}\"");
                 sb.AppendLine($"B130,115,0,UA0,2,2,152,B,\"{etiqueta.MontarCodigoDeBarras(numeracao.Numero)}\"");
-                sb.AppendLine($"P{numeracao.Quantidade},1");
+                sb.AppendLine($"P{numeracao.Quantidade},1"); 
             }
 
             RawPrinterHelper.SendStringToPrinter(ConfigurationManager.AppSettings["printerName"], sb.ToString());
